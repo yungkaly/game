@@ -6,7 +6,7 @@ const options = {
   },
 };
 
-const mainDiv = document.createElement("div"); // Ana div elementi
+const gameListDiv = document.getElementById("game-list");
 
 fetch(
   "https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d.mmorpg.fantasy.pvp&platform=pc",
@@ -14,18 +14,48 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    data.forEach((game) => {
-      const gameDiv = document.createElement("div"); // Her bir oyun için div elementi
-      mainDiv.classList.add("game", "row");
-      gameDiv.classList.add("col-4", "p-5");
-      gameDiv.innerHTML = `
-		  <h2>${game.title}</h2>
-		  <img src="${game.thumbnail}" alt="${game.title}">
-		  <p>${game.short_description}</p>
-		`;
-      mainDiv.appendChild(gameDiv); // Ana div elementine oyun div elementini ekle
-    });
+    const firstThreeGames = data.slice(0, 3);
+    const firstThreeGamesHTML = firstThreeGames
+      .map(
+        (game) => `
+        <div class="col-12 col-md-4 game-img-top rounded mt-4">
+        <div class="d-flex">
+        <p class="text-white three-text" onclick="Swal.fire({
+          title: '${game.title}',
+          text: '${game.short_description}',
+          imageUrl: '${game.thumbnail}',
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image',
+        })
+        ">${game.title}</p>
+        <p class="game-type">${game.genre}</p>
+        </div>
+          <img onclick="Swal.fire({
+          title: '${game.title}',
+          text: '${game.short_description}',
+            customClass: {
+              content: 'my-swal-text'
+            },
+          imageUrl: '${game.thumbnail}',
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image',
+        })
+        " class="thumbnail" src="${game.thumbnail}" alt="${game.title}">
+        </div>
+      `
+      )
+      .join("");
+
+    const firstThreeGamesDiv = document.createElement("div");
+    firstThreeGamesDiv.classList.add("row", "justify-content-center");
+    firstThreeGamesDiv.innerHTML = firstThreeGamesHTML;
+
+    const containerDiv = document.createElement("div");
+    containerDiv.appendChild(firstThreeGamesDiv);
+    containerDiv.classList.add("container");
+
+    gameListDiv.appendChild(containerDiv);
   })
   .catch((err) => console.error(err));
-
-// document.body.appendChild(mainDiv); // Ana div elementini sayfaya ekle

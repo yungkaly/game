@@ -1,14 +1,23 @@
 body {
   background: #272727;
   font-family: "Roboto Mono", monospace;
+  color: white;
+}
+
+.navbar-header {
+  background-color: #272727 !important;
+}
+
+.logo {
+  width: 90px;
 }
 
 .slider {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  height: 380px;
-  background: white;
+  height: 480px;
+  background: rgb(45, 45, 45);
 }
 
 .slider-text {
@@ -90,9 +99,52 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    .all-games-box {
-      width: 120px;
-      height: 120px;
-    }
+  .all-games-box {
+    width: 120px;
+    height: 120px;
   }
-  
+}
+
+.game-img-top {
+  overflow: hidden;
+}
+
+.game-img-top img {
+  transition: transform 0.5s ease;
+}
+
+.game-img-top:hover img {
+  transform: scale(1.1);
+}
+
+.firstThreeGamesDiv {
+  width: 1392px;
+}
+
+.three-text {
+  font-weight: 500;
+  transition: 0.7s;
+}
+
+.three-text:hover {
+  color: rgb(162, 162, 162) !important;
+}
+
+.my-swal-text {
+  font-size: 12px;
+}
+
+.game-type {
+  background-color: #1e4729;
+  color: #5bff87;
+  border-radius: 4px;
+  margin-left: 12px;
+  padding-right: 4px;
+  padding-left: 4px;
+  font-size: 14px;
+}
+
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.2s filter;
+  filter: blur(7px);
+}
