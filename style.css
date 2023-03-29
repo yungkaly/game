@@ -1,6 +1,6 @@
 body {
   background: #272727;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", monospace;
   color: white;
 }
 
@@ -16,7 +16,6 @@ body {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  height: 480px;
   background: rgb(45, 45, 45);
 }
 
@@ -92,7 +91,7 @@ body {
 
 .all-games-box {
   background: white;
-  width: 200px;
+  width: 300px;
   height: 150px;
   margin: 10px;
   border-radius: 4px;
@@ -122,6 +121,7 @@ body {
 }
 
 .three-text {
+  font-size: 22px;
   font-weight: 500;
   transition: 0.7s;
 }
@@ -142,9 +142,57 @@ body {
   padding-right: 4px;
   padding-left: 4px;
   font-size: 14px;
+  align-items: center;
 }
 
 body.swal2-shown > [aria-hidden="true"] {
   transition: 0.2s filter;
   filter: blur(7px);
+}
+
+.game__url {
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+}
+
+.game__url:hover {
+  background: #1d1d1d !important;
+  border-radius: 5px;
+  color: white !important;
+}
+
+.bar-img {
+  position: absolute;
+  max-width: 1290px;
+}
+
+.bar-text {
+  z-index: 999;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 42px;
+}
+
+.bar-text-2 {
+  z-index: 999;
+  position: absolute;
+  margin-top: 140px;
+  margin-left: 42px;
+  background: -webkit-linear-gradient(#E14D2A, #FD841F);
+  color: white;
+  text-decoration: none;
+  border-radius: 200px;
+  padding-right: 42px;
+  padding-left: 42px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.bar-text-2:hover{
+  color: rgb(255, 255, 255);
+}
+
+.thumbnail{
+  width: 100%;
 }

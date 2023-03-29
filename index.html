@@ -9,9 +9,8 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon"
         href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Video-Game-Controller-Icon.svg/1024px-Video-Game-Controller-Icon.svg.png">
     <title>Oyun Satış</title>
@@ -19,13 +18,39 @@
 
 <body>
 
+
     <nav class="navbar navbar-header">
         <div class="container">
             <img class="logo p-1" src="assets/img/logo.svg" alt="">
+            <div class="d-flex">
+                <a class="p-2 mb-0 text-white">Giriş Yap</a>
+                <a class="p-2 mb-0 text-white">Üye Ol</a>
+            </div>
         </div>
     </nav>
 
-    <!-- <SLIDER> -->
+    <div id="carouselExampleControls" class="carousel slide slider" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./assets/img/slider-1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/img/slider-2.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- <SLIDER>
     <div class="slider">
         <div class="container mb-5">
             <div class="slider-text">TÜRKİYE’NİN EN BÜYÜK<br>
@@ -36,18 +61,24 @@
             </div>
         </div>
     </div>
-
+    -->
     <!-- EN ÇOK SATANLAR -->
     <div class="container mt-4">
         <div class="d-flex">
-            <h4 class="text-white mt-4 fw-bold">EN ÇOK SATAN #3</h4>
-            <p class="top-list-number ms-2 text-center"><span class="top-list-number-in">TOP #3</span></p>
+            <h4 class="text-white mt-4 fw-bold">EN ÇOK SATAN #6</h4>
+            <p class="top-list-number ms-2 text-center"><span class="top-list-number-in">TOP #6</span></p>
         </div>
         <p class="top-list-p">2022 Verilerine Göre En Çok Satın Alınan Oyunlar Bu Şekildedir</p>
 
         <!-- ÜC ADET OYUN -->
-        <div id="game-list"></div>
-        <!-- TÜM OYUNLAR -->
+        <div id="game-list" class="mb-5"></div>
+        <!-- REKLAM  -->
+        <div class="mt-5 ">
+            <h4 class="mb-3">GÜÇ SENİ BEKLİYOR !</h4>
+            <h5 class="text-white bar-text">Diablo Immortal</h5>
+            <a href="/" class="bar-text-2">Ziyaret Et</a>
+            <img class="bar-img" src="assets/img/bar-img.jpg" alt="Snow" style="width:100%;">
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -60,6 +91,7 @@
             crossorigin="anonymous"></script>
         <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

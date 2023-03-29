@@ -14,7 +14,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    const firstThreeGames = data.slice(0, 3);
+    const firstThreeGames = data.slice(0, 6);
     const firstThreeGamesHTML = firstThreeGames
       .map(
         (game) => `
@@ -27,9 +27,12 @@ fetch(
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: 'Custom image',
+          footer: '<a>${game.developer}</a>',
         })
         ">${game.title}</p>
+        <div class="d-flex align-items-center">
         <p class="game-type">${game.genre}</p>
+        </div>
         </div>
           <img onclick="Swal.fire({
           title: '${game.title}',
@@ -41,8 +44,10 @@ fetch(
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: 'Custom image',
+          footer: '<a>${game.developer}</a>',
         })
         " class="thumbnail" src="${game.thumbnail}" alt="${game.title}">
+        <div class="mt-3 text-center"><a href="${game.game_url}" class="game__url">Hemen Üye Ol !</a></div>
         </div>
       `
       )
